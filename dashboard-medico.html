@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Médico</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Sistema de Citas Médicas</h1>
+    <span>Médico: Dra. Ana Gómez</span>
+  </header>
+  <main>
+    <h2>Pacientes del día</h2>
+    <div class="paciente-tarjeta">
+      <strong>Paciente:</strong> Juan Pérez<br>
+      <strong>Hora:</strong> 10:00 AM<br>
+      <button>Marcar como atendido</button>
+    </div>
+    <div class="paciente-tarjeta">
+      <strong>Paciente:</strong> María López<br>
+      <strong>Hora:</strong> 10:30 AM<br>
+      <button>Marcar como atendido</button>
+    </div>
+  </main>
+  document.addEventListener('DOMContentLoaded', function () {
+  const botones = document.querySelectorAll('button');
+
+  botones.forEach(btn => {
+    if (btn.textContent === 'Marcar como atendido') {
+      btn.addEventListener('click', function () {
+        btn.textContent = 'Atendido';
+        btn.disabled = true;
+        btn.style.backgroundColor = '#4CAF50'; // verde
+      });
+    }
+  });
+});
+
+</body>
+</html>
